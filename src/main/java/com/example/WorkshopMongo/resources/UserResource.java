@@ -27,7 +27,7 @@ public class UserResource {
 	public ResponseEntity<List<UserDTO>> findAll(){
 		List<User> list = service.findAll();
 		List<UserDTO> listDTO = list.stream().map(x -> new UserDTO(x)).collect(Collectors.toList()); //Convertendo a lista em uma listaDTO
-		return ResponseEntity.ok().body(	listDTO);
+		return ResponseEntity.ok().body(listDTO);
 	}
 	
 	@RequestMapping(value = "/{id}", method=RequestMethod.GET) // ou GetMapping()
