@@ -1,5 +1,6 @@
 package com.example.WorkshopMongo.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,4 +21,7 @@ public class PostServices {
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Object not found, try another way!")); //caso contrário
 	}
 	
+	public List<Post> findByTitle(String text){
+		return postRepository.findByTitleContainingIgnoreCase(text);
+	}
 }
