@@ -15,3 +15,4 @@ Nesse projeto, eu estou se aprofundando e estudando cada vez mais sobre Spring B
 - Postman
 - Apache TomCat 
 - INSERT, DELETE and UPDATE direct on Postmam
+- @Query methods
