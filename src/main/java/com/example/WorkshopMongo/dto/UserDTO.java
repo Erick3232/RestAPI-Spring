@@ -1,6 +1,7 @@
 package com.example.WorkshopMongo.dto;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import com.example.WorkshopMongo.domain.User;
 
@@ -9,6 +10,11 @@ public class UserDTO implements Serializable{
 	private String id;
 	private String name;
 	private String email;
+	private Date birthDate;
+	private String CPF;
+	private String country;
+	private String phone;
+	
 	public UserDTO() {
 		
 	}
@@ -16,6 +22,10 @@ public class UserDTO implements Serializable{
 		id = obj.getId();
 		name = obj.getName();
 		email = obj.getEmail();
+		birthDate = obj.getBirthDate();
+		CPF = obj.getCPF();
+		country = obj.getCountry();
+		phone = obj.getPhone();
 	}
 	public String getId() {
 		return id;
@@ -34,6 +44,30 @@ public class UserDTO implements Serializable{
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public Date getBirthDate() {
+		return birthDate;
+	}
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
+	}
+	public String getCPF() {
+		return CPF;
+	}
+	public void setCPF(String cPF) {
+		CPF = cPF;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 	
 }

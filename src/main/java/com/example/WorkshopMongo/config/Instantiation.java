@@ -31,14 +31,14 @@ public class Instantiation implements CommandLineRunner{
 		userRepository.deleteAll();
 		postRepository.deleteAll();
 		
-		User maria = new User(null, "Maria Brown", "maria@gmail.com");
-		User alex = new User(null, "Alex Green", "alex@gmail.com");
-		User bob = new User(null, "Bob Josh", "bob@gmail.com");
-		User u1 = new User(null, "Mr Beast", "beast@gmail.com");
-		User u2 = new User(null, "Thomas Edson", "thomas@gmail.com");
-		User u3 = new User(null, "Nicolas Tesla", "tesla@gmail.com");
-		User u4 = new User(null, "Machiavel", "machiavel@gmail.com");
-		User u5 = new User(null, "Gutenberg", "gutenberg@gmail.com");
+		User maria = new User(null, "Maria Brown", "maria@gmail.com", sdf.parse("21/09/1981"), "102.212.219-12", "Australia", "1156325-5874");
+		User alex = new User(null, "Alex Green", "alex@gmail.com", sdf.parse("11/03/2000"), "456.357.159-44", "Coreia do Sul", "117896-5423");
+		User bob = new User(null, "Bob Josh", "bob@gmail.com", sdf.parse("15/03/1973"), "489.159.753-88", "Brasil", "115896-8745");
+		User u1 = new User(null, "Mr Beast", "beast@gmail.com", sdf.parse("15/03/1973"), "489.159.753-88", "Brasil", "115896-8745");
+		User u2 = new User(null, "Thomas Edson", "thomas@gmail.com",sdf.parse("15/03/1973"), "489.159.753-88", "Brasil", "115896-8745");
+		User u3 = new User(null, "Nicolas Tesla", "tesla@gmail.com", sdf.parse("15/03/1973"), "489.159.753-88", "Brasil", "115896-8745");
+		User u4 = new User(null, "Machiavel", "machiavel@gmail.com", sdf.parse("15/03/1973"), "489.159.753-88", "Brasil", "115896-8745");
+		User u5 = new User(null, "Gutenberg", "gutenberg@gmail.com", sdf.parse("15/03/1973"), "489.159.753-88", "Brasil", "115896-8745");
 		
 		userRepository.saveAll(Arrays.asList(maria,alex,bob,u1,u2,u3,u4,u5));
 		
@@ -55,7 +55,7 @@ public class Instantiation implements CommandLineRunner{
 		CommentDTO c2 = new CommentDTO("Que comida boa!", sdf.parse("13/03/2018"), new AuthorDTO(u1));
 		CommentDTO c3 = new CommentDTO("Gostei bastante da prova", sdf.parse("09/03/2018"), new AuthorDTO(u2));
 		CommentDTO c4 = new CommentDTO("HTML É LINGUAGEM PO", sdf.parse("17/03/2018"), new AuthorDTO(u3));
-
+		
 		p1.getComment().addAll(Arrays.asList(c1,c2));
 		p2.getComment().addAll(Arrays.asList(c3,c4));
 		

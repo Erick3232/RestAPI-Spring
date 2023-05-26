@@ -29,7 +29,7 @@ public class UserServices {
 		return userRepository.insert(obj);
 	}
 	public User fromDTO(UserDTO userDTO) {
-		return new User(userDTO.getId(),userDTO.getName(),userDTO.getEmail());
+		return new User(userDTO.getId(),userDTO.getName(),userDTO.getEmail(),userDTO.getBirthDate(),userDTO.getCPF(),userDTO.getCountry(),userDTO.getPhone());
 	}
 	public void delete(String id) {
 		findById(id);

@@ -2,6 +2,7 @@ package com.example.WorkshopMongo.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -16,6 +17,10 @@ public class User implements Serializable {
 	@Id
 	private String id;
 	private String email;
+	private Date birthDate;
+	private String CPF;
+	private String country;
+	private String phone;
 
 	@DBRef(lazy = true)
 	private List<Post> posts = new ArrayList<>();
@@ -23,11 +28,15 @@ public class User implements Serializable {
 
 	}
 
-	public User(String id, String name, String email) {
+	public User(String id, String name, String email, Date birthDate, String CPF, String country, String phone) {
 		super();
 		this.name = name;
 		this.id = id;
 		this.email = email;
+		this.birthDate = birthDate;
+		this.CPF = CPF;
+		this.country = country;
+		this.phone = phone;
 	}
 
 	public String getName() {
@@ -53,6 +62,39 @@ public class User implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public Date getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	public String getCPF() {
+		return CPF;
+	}
+
+	public void setCPF(String cPF) {
+		CPF = cPF;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
 	public List<Post> getPosts() {
 		return posts;
 	}
